@@ -1,0 +1,14 @@
+[
+  {
+    "first_name": "Nikola",
+    "last_name": "Nikolic",
+    "email": "nn@gmail.com",
+    "password": "pass123"
+  },
+  {
+    "first_name": "Ivan",
+    "last_name": "Ivanovic",
+    "email": "ii@gmail.com",
+    "password": "pass123"
+  }
+]

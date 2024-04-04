@@ -1,0 +1,16 @@
+[
+  {
+    "first_name": "Pera",
+    "last_name": "Peric",
+    "email": "pp@gmail.com",
+    "password": "pass123",
+    "identifier": "01/2024"
+  },
+  {
+    "first_name": "Laza",
+    "last_name": "Lazic",
+    "email": "ll@gmail.com",
+    "password": "pass123",
+    "identifier": "02/2024"
+  }
+]
