@@ -222,7 +222,7 @@ def complete_exam(exam_id):
 # STUDENT EXAMS
 @app.route('/api/v1/exams/<int:exam_id>/start', methods=['POST'])
 @student_required
-def start_exam(exam_id):
+def start_exam_as_student(exam_id):
     exam = exam_dao.find_by_id(exam_id)
     if not exam:
         return not_found('Exam not found')
@@ -244,7 +244,7 @@ def start_exam(exam_id):
 # Endpoint for completing an exam
 @app.route('/api/v1/exams/<int:exam_id>/complete', methods=['POST'])
 @student_required
-def complete_exam(exam_id):
+def complete_exam_as_student(exam_id):
     exam = exam_dao.find_by_id(exam_id)
     if not exam:
         return not_found('Exam not found')

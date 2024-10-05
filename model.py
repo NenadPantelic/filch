@@ -32,7 +32,7 @@ class User(db.Model):
 class Student(User):
     __tablename__ = "student"
     __table_args__ = {"extend_existing": True}
-
+    id = db.Column(db.Integer, primary_key=True)
     identifier = db.Column(db.String(50), unique=True, nullable=False)
     active = db.Column(db.Boolean, nullable=False, default=False)
 
@@ -44,6 +44,8 @@ class Student(User):
 class Staff(User):
     __tablename__ = 'staff'
     __table_args__ = {"extend_existing": True}
+
+    id = db.Column(db.Integer, primary_key=True)
 
     @property
     def role(self):

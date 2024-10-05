@@ -21,31 +21,32 @@ staff_dao = StaffDAO(session)
 course_dao = CourseDAO(session)
 exam_dao = ExamDAO(session)
 
-# # environments
-# ENVIRONMENTS = load_json('resources/environments.json')
-# for environment in ENVIRONMENTS:
-#     environment_dao.insert(Environment(**environment))
-#
-# # # students
-# STUDENTS = load_json('resources/students.json')
-# for student in STUDENTS:
-#     student['password'] = hash_password(student['password'])
-#     student_dao.insert(Student(**student))
-#
-# # staff
-# STAFF = load_json('resources/staff.json')
-# for staff in STAFF:
-#     staff['password'] = hash_password(staff['password'])
-#     staff_dao.insert(Staff(**staff))
-#
-# # courses
-# COURSES = load_json('resources/courses.json')
-# staff = staff_dao.find_by_id(1)
-#
-# for course_data in COURSES:
-#     course = Course(**course_data)
-#     course.creator = staff
-#     course_dao.insert(course)
+# environments
+ENVIRONMENTS = load_json('resources/environments.json')
+for environment in ENVIRONMENTS:
+    environment_dao.insert(Environment(**environment))
+
+# # students
+STUDENTS = load_json('resources/students.json')
+for student in STUDENTS:
+    student['password'] = hash_password(student['password'])
+    student['active'] = True
+    student_dao.insert(Student(**student))
+
+# staff
+STAFF = load_json('resources/staff.json')
+for staff in STAFF:
+    staff['password'] = hash_password(staff['password'])
+    staff_dao.insert(Staff(**staff))
+
+# courses
+COURSES = load_json('resources/courses.json')
+staff = staff_dao.find_by_id(1)
+
+for course_data in COURSES:
+    course = Course(**course_data)
+    course.creator = staff
+    course_dao.insert(course)
 
 # exams
 EXAMS = load_json('resources/exams.json')
